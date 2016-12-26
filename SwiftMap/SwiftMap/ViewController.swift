@@ -12,8 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let user = dicToModel()
-        print(user.name)
+//        let user = dicToModel()
+//        print(user.name)
         let dic = modelToDic()
         print(dic)
         

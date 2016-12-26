@@ -18,7 +18,10 @@ extension NSObject{
                 let properties = class_copyPropertyList(classType, &count)
                 for i in 0..<count{
                     let property = properties?[Int(i)]
-                    let propertyKey = String(cString: property_getName(property))         //模型中属性名称
+                    var propertyKey = String(cString: property_getName(property))         //模型中属性名称
+                    if propertyKey == "desc" {
+                        propertyKey = "description"
+                    }
                     let propertyType = String(cString: property_getAttributes(property))  //模型中属性类型
                     
                     let tempValue:AnyObject!  = self.value(forKey: propertyKey) as AnyObject!
